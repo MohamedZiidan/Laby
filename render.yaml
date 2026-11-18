@@ -1,0 +1,18 @@
+services:
+  - type: web
+    name: laby
+    runtime: docker
+    plan: starter          # persistent disk requires a paid plan
+    disk:
+      name: laby-data
+      mountPath: /data
+      sizeGB: 5
+    envVars:
+      - key: ANTHROPIC_API_KEY
+        sync: false
+      - key: OPENAI_API_KEY
+        sync: false
+      - key: INSTRUCTOR_CODE
+        sync: false
+      - key: MIN_VOICE_SECONDS
+        value: "60"
