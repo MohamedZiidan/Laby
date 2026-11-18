@@ -139,7 +139,7 @@ function authPage(mode) {
         <select name="role" id="role"><option value="student">متدرب</option><option value="instructor">مدرب</option></select>
         <div id="codeBox" hidden><label>كود المدرب (إن وُجد)</label><input name="instructor_code" dir="ltr"></div>` : ''}
       <p><button>${reg ? 'إنشاء الحساب' : 'دخول'}</button></p>
-      ${reg ? '' : '<p class="muted small">تجريبي (مدرب): demo@laby.app / demo1234</p>'}
+      
     </form>`;
   $('#role')?.addEventListener('change', (e) => ($('#codeBox').hidden = e.target.value !== 'instructor'));
   $('#f').addEventListener('submit', async (e) => {
