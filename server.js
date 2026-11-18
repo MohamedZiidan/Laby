@@ -20,7 +20,7 @@ fs.mkdirSync(AUDIO_DIR, { recursive: true });
 const app = express();
 app.use(express.json({ limit: '1mb' }));
 app.use('/uploads/videos', express.static(VIDEOS_DIR)); // supports Range requests (seeking)
-app.use(express.static(path.resolve('public')));
+app.use(express.static(path.resolve('Public')));
 
 // ---------- helpers ----------
 const wrap = (fn) => (req, res, next) => Promise.resolve(fn(req, res, next)).catch(next);
